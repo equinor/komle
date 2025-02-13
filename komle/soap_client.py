@@ -76,7 +76,11 @@ def _to_envelope(objects):
     except Exception as e:
         raise TypeError(str(e))
     q_objs = envelope_type(*objects, version=witsml.__version__)
-    return typename, q_objs.toxml()
+    return typename, q_objs.toxml(
+        bds=pyxb.utils.domutils.BindingDOMSupport(
+            default_namespace='http://www.witsml.org/schemas/1series',
+        ),
+    )
 
 class BaseClient:
     def __init__(self, service_url: str, username: str, password: str,
