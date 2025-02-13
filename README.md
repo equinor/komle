@@ -16,13 +16,13 @@ Some of the features are:
 ## Install
 
 ``` bash
-pip3 install git+ssh://git@github.com/kle043/komle.git
+pip install git+https://github.com/equinor/komle.git
 ```
 
 Or if the repo is cloned
 
 ``` bash
-pip3 install -U .
+pip install -U .
 ```
 
 ## Getting started
